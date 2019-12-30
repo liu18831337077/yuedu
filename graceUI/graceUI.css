@@ -1,0 +1,115 @@
+/* 来自 graceUI http://grace.hcoder.net/ */
+view{font-size:28upx;}
+.grace-padding{padding:2%; width:96%;}
+.grace-common-bg{background:#F8F8F8;}
+.grace-noborder{border:0 !important;}
+.grace-left-padding-wrap{width:96%; padding:12upx 0; padding-left:4%; overflow:hidden; background:#FFFFFF;}
+.grace-left-padding-wrap .grace-list{border-bottom:1upx solid #D1D1D1; padding-left:0;}
+.grace-left-padding-wrap .grace-list view text{color:#666; font-size:28upx;}
+
+/* 文字相关 */
+.grace-center{justify-content:center; text-align:center;}
+.grace-h1{font-size:80upx; line-height:1.8em;}
+.grace-h2{font-size:60upx; line-height:1.8em;}
+.grace-h3{font-size:45upx; line-height:1.8em;}
+.grace-h4{font-size:32upx; line-height:1.8em;}
+.grace-h5{font-size:30upx; line-height:1.8em;}
+.grace-text{font-size:28upx; line-height:2.2em;}
+.grace-text image{width:100%; margin:20upx 0;}
+.grace-text-small{font-size:24upx; line-height:1.8em;}
+.grace-line-through{text-decoration:line-through;}
+.grace-italic{font-style:italic;}
+.grace-indent{text-indent:2em;}
+.grace-blod{font-weight:700;}
+.grace-ellipsis{width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+/* 栅格布局 */
+.grace-flex{display:flex !important;}
+.grace-rows{display:flex; flex-direction:row !important;}
+.grace-columns{display:flex; flex-direction:column !important;}
+.grace-wrap{display:flex; flex-wrap:wrap;}
+.grace-nowrap{display:flex; flex-wrap:nowrap !important;}
+.grace-space-between{display:flex; justify-content:space-between !important;}
+
+/* 背景颜色 */
+.grace-bg-red{background:#F76260;}
+.grace-bg-green{background:#09BB07;}
+.grace-bg-blue{background:#10AEFF;}
+
+/* 横向广告组 */
+.grace-box-banner{padding:20upx 0; display:flex; flex-wrap:nowrap; overflow:hidden; background:#FFF;}
+.grace-box-banner .garce-items{width:25%; border-right:1px solid #F1F2F3; justify-content:center; line-height:1.4em; text-align:center；}
+.grace-box-banner .garce-items:last-child{border:none;}
+.grace-box-banner .garce-items view{justify-content:center; text-align:center;}
+.grace-box-banner .garce-items text text{font-size:22rupx; color:#666;}
+.grace-box-banner .line1{font-size:36upx; line-height:60upx; overflow:hidden;}
+.grace-box-banner .line1 text{font-size:26upx; color:#666; line-height:65upx; margin-left:5upx;}
+.grace-box-banner .line2{font-size:26upx; color:#666; line-height:32upx;}
+
+/* 标题及更多 */
+.grace-title{padding:10upx 0; line-height:1.8em;}
+.grace-title .grace-text-small{color:#888;}
+.grace-more-bottom{font-size:24upx; text-align:center; justify-content:center; padding:15upx 0; line-height:40upx;}
+.grace-more-bottom text{font-size:24upx;}
+.grace-more-r{display:block; width:auto; flex-shrink:0; font-size:22upx;}
+.grace-more-r text{font-size:22upx;}
+
+/* 提交文章页面 */
+.write_title{padding:10px; border-bottom:1px dashed #F1F2F3;}
+.write_title input{width:100%; font-size:20px; line-height:26px; text-align:center;}
+.inputArea{padding:10px; display:flex; flex-wrap:nowrap;}
+.inputArea .addImg{width:90px; height:90px; text-align:center; line-height:90px; flex-shrink:0; font-size:16px; margin-right:8px; background:#F4F5F6;}
+.inputArea .addText{width:100%; height:90px; display:flex; flex-wrap:nowrap;  background:#F4F5F6;}
+.inputArea .addText textarea{width:100%; height:80px; padding:5px; font-size:14px;}
+.inputArea .addText button{width:60px; height:90px; font-size:12px; text-align:center; line-height:90px; margin-left:8px; flex-shrink:0;}
+.artList{padding:10px;}
+.artList .item{width:100%; margin:10px 0; overflow:hidden;}
+.artList image{width:100% !important; height:auto;}
+.artList .item textarea{width:80%; margin:0 auto; height:40px; line-height:40px; text-align:center; padding:5px; font-size:14px; line-height:1.5em; color:#CCC; border-bottom:1px solid #D1D1D1;}
+.submitNow{line-height:50px; color:#00B26A; font-size:18px; margin:0px 10px; text-align:center; border-top:1px solid #F1F2F3; border-bottom:1px solid #F1F2F3;}
+.deleteText{text-align:center; line-height:20px; font-size:14px; color: #00B26A; margin-top:8px;}
+.art-cate{padding:10px; display:flex; flex-wrap:nowrap; justify-content:space-between;}
+
+/* 首页分段器 */
+.grace-header-cate{width:100%; height:42px; background:#FFF; border-bottom:2px solid #F0F0F0; position:fixed; z-index:1; left:0; top:0;}
+.grace-tab-title{white-space:nowrap; text-align:center;}
+.grace-tab-title view{width:auto; padding:0 12px; margin:0 8px; line-height:42px; display:inline-block; text-align:center; font-size:30upx;}
+.grace-tab-title view:first-child{margin-left: 0;}
+.grace-tab-title view:last-child{margin-right: 0;}
+.grace-tab-current{border-bottom:2px solid #DE533A !important; color:#DE533A;}
+
+/* 新闻列表 */
+.grace-news-list{padding:12px;}
+.grace-news-list > navigator{display:block; width:100%; padding:12upx 0; margin:12upx 0;}
+.grace-news-list-items{width:100%; display:flex; flex-wrap:nowrap; position:relative;}
+.grace-news-list-img{width:200upx; flex-shrink:0;}
+.grace-news-list-title{width:100%; overflow:hidden;}
+.grace-news-list-title-main{line-height:1.5em; font-size:32upx; width:100%;}
+.grace-news-list-title-desc{font-size:24upx; display:block; color:#666; margin-top:12upx; height:40upx; line-height:40upx;}
+.grace-news-tips{width:auto; padding:0 12upx; border-radius:5upx; overflow:hidden; background:#FF4343; position:absolute; top:0; color:#FFFFFF; height:36upx; line-height:36upx; font-size:20upx;}
+.grace-news-tips-l{left:0;}
+.grace-news-tips-r{right:0;}
+.grace-news-list-info{width:100%; margin-top:10upx; line-height:36upx; font-size:24upx; color:#666; justify-content:space-between;}
+.grace-news-list-info view{font-size:24upx; color:#666;}
+.grace-news-list-info text{font-size:24upx; color:#666; margin-right:10upx;}
+.grace-news-list-img-news{width:100%; flex-wrap:wrap;}
+.grace-news-list-imgs{justify-content:space-between; width:100%; padding:18upx 0; display:flex; flex-wrap:nowrap;}
+.grace-news-list-imgs .imgs{width:31.3%; height:70px; overflow:hidden; margin:0 1%;}
+.grace-news-list-imgs .imgs image{width:100%;}
+.grace-news-list-img-big{width:100%; max-height:188px; overflow:hidden; padding:18upx 0;}
+.grace-news-list-img-big image{width:100%;}
+
+
+.grace-skeleton{padding:5px 0; background:#F1F2F3; border-radius:8px;}
+.grace-article-title{margin:8px 12px; font-size:26px; line-height:1.5em; font-weight:700;}
+.grace-article-author-line{margin:3px 12px; display:flex; flex-wrap:nowrap; justify-content:space-between;}
+.grace-article-author{display:flex; flex-wrap:nowrap;}
+.grace-article-author image{width:28px; height:28px; border-radius:100%;}
+.grace-article-author .author-name{line-height:28px; padding-left:5px;}
+.grace-article-author-line .btn{display:inline-block; height:28px; line-height:28px; border-radius:3px; padding:0 10px; background:#00B26A; color:#FFFFFF;}
+.grace-article-info-line{margin:8px 12px; display:flex; flex-wrap:nowrap; justify-content:space-between;}
+.grace-article-info-line view{color:#888; line-height:20px; font-size:12px;}
+.grace-article-contents{margin:10px 0;}
+.grace-article-contents .img-item{width:100%;}
+.grace-article-contents .img-item image{width:100%;}
+.grace-article-contents .text-item{margin:8px 12px; line-height:2.2em; font-size:16px; color:#2F2F2F;} 

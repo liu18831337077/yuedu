@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/write/write",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/editArt/editArt",
+    "pages/info/info"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "悦读",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#DE533A",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "文章",
+        "iconPath": "static/nav1.png",
+        "selectedIconPath": "static/nav1-a.png"
+      },
+      {
+        "pagePath": "pages/write/write",
+        "text": "写作",
+        "iconPath": "static/nav2.png",
+        "selectedIconPath": "static/nav2-a.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/nav3.png",
+        "selectedIconPath": "static/nav3-a.png"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": false,
+    "autoclose": true
+  },
+  "appname": "yuedu",
+  "compilerVersion": "2.4.6",
+  "usingComponents": {}
+}
