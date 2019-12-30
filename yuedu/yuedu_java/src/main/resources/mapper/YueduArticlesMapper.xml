@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liu.yuedu.mapper.YueduArticlesMapper" >
+  <resultMap id="BaseResultMap" type="com.liu.yuedu.pojo.YueduArticles" >
+    <id column="art_id" property="art_id" jdbcType="INTEGER" />
+    <result column="art_cate" property="art_cate" jdbcType="INTEGER" />
+    <result column="art_title" property="art_title" jdbcType="VARCHAR" />
+    <result column="art_uid" property="art_uid" jdbcType="INTEGER" />
+    <result column="art_createtime" property="art_createtime" jdbcType="DATE" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.liu.yuedu.pojo.YueduArticles" extends="BaseResultMap" >
+    <result column="art_content" property="art_content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    art_id, art_cate, art_title, art_uid, art_createtime
+  </sql>
+  <sql id="Blob_Column_List" >
+    art_content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.liu.yuedu.pojo.YueduArticlesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from yuedu_articles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.liu.yuedu.pojo.YueduArticlesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from yuedu_articles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from yuedu_articles
+    where art_id = #{art_id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from yuedu_articles
+    where art_id = #{art_id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.liu.yuedu.pojo.YueduArticlesExample" >
+    delete from yuedu_articles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.liu.yuedu.pojo.YueduArticles" >
+    insert into yuedu_articles (art_id, art_cate, art_title, 
+      art_uid, art_createtime, art_content
+      )
+    values (#{art_id,jdbcType=INTEGER}, #{art_cate,jdbcType=INTEGER}, #{art_title,jdbcType=VARCHAR}, 
+      #{art_uid,jdbcType=INTEGER}, #{art_createtime,jdbcType=DATE}, #{art_content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.liu.yuedu.pojo.YueduArticles" >
+    insert into yuedu_articles
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="art_id != null" >
+        art_id,
+      </if>
+      <if test="art_cate != null" >
+        art_cate,
+      </if>
+      <if test="art_title != null" >
+        art_title,
+      </if>
+      <if test="art_uid != null" >
+        art_uid,
+      </if>
+      <if test="art_createtime != null" >
+        art_createtime,
+      </if>
+      <if test="art_content != null" >
+        art_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="art_id != null" >
+        #{art_id,jdbcType=INTEGER},
+      </if>
+      <if test="art_cate != null" >
+        #{art_cate,jdbcType=INTEGER},
+      </if>
+      <if test="art_title != null" >
+        #{art_title,jdbcType=VARCHAR},
+      </if>
+      <if test="art_uid != null" >
+        #{art_uid,jdbcType=INTEGER},
+      </if>
+      <if test="art_createtime != null" >
+        #{art_createtime,jdbcType=DATE},
+      </if>
+      <if test="art_content != null" >
+        #{art_content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.liu.yuedu.pojo.YueduArticlesExample" resultType="java.lang.Integer" >
+    select count(*) from yuedu_articles
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update yuedu_articles
+    <set >
+      <if test="record.art_id != null" >
+        art_id = #{record.art_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.art_cate != null" >
+        art_cate = #{record.art_cate,jdbcType=INTEGER},
+      </if>
+      <if test="record.art_title != null" >
+        art_title = #{record.art_title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.art_uid != null" >
+        art_uid = #{record.art_uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.art_createtime != null" >
+        art_createtime = #{record.art_createtime,jdbcType=DATE},
+      </if>
+      <if test="record.art_content != null" >
+        art_content = #{record.art_content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update yuedu_articles
+    set art_id = #{record.art_id,jdbcType=INTEGER},
+      art_cate = #{record.art_cate,jdbcType=INTEGER},
+      art_title = #{record.art_title,jdbcType=VARCHAR},
+      art_uid = #{record.art_uid,jdbcType=INTEGER},
+      art_createtime = #{record.art_createtime,jdbcType=DATE},
+      art_content = #{record.art_content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update yuedu_articles
+    set art_id = #{record.art_id,jdbcType=INTEGER},
+      art_cate = #{record.art_cate,jdbcType=INTEGER},
+      art_title = #{record.art_title,jdbcType=VARCHAR},
+      art_uid = #{record.art_uid,jdbcType=INTEGER},
+      art_createtime = #{record.art_createtime,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liu.yuedu.pojo.YueduArticles" >
+    update yuedu_articles
+    <set >
+      <if test="art_cate != null" >
+        art_cate = #{art_cate,jdbcType=INTEGER},
+      </if>
+      <if test="art_title != null" >
+        art_title = #{art_title,jdbcType=VARCHAR},
+      </if>
+      <if test="art_uid != null" >
+        art_uid = #{art_uid,jdbcType=INTEGER},
+      </if>
+      <if test="art_createtime != null" >
+        art_createtime = #{art_createtime,jdbcType=DATE},
+      </if>
+      <if test="art_content != null" >
+        art_content = #{art_content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where art_id = #{art_id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.liu.yuedu.pojo.YueduArticles" >
+    update yuedu_articles
+    set art_cate = #{art_cate,jdbcType=INTEGER},
+      art_title = #{art_title,jdbcType=VARCHAR},
+      art_uid = #{art_uid,jdbcType=INTEGER},
+      art_createtime = #{art_createtime,jdbcType=DATE},
+      art_content = #{art_content,jdbcType=LONGVARCHAR}
+    where art_id = #{art_id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liu.yuedu.pojo.YueduArticles" >
+    update yuedu_articles
+    set art_cate = #{art_cate,jdbcType=INTEGER},
+      art_title = #{art_title,jdbcType=VARCHAR},
+      art_uid = #{art_uid,jdbcType=INTEGER},
+      art_createtime = #{art_createtime,jdbcType=DATE}
+    where art_id = #{art_id,jdbcType=INTEGER}
+  </update>
+</mapper>

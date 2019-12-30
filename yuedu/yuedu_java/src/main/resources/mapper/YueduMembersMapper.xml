@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liu.yuedu.mapper.YueduMembersMapper" >
+  <resultMap id="BaseResultMap" type="com.liu.yuedu.pojo.YueduMembers" >
+    <id column="u_id" property="u_id" jdbcType="INTEGER" />
+    <result column="u_openid" property="u_openid" jdbcType="VARCHAR" />
+    <result column="u_name" property="u_name" jdbcType="VARCHAR" />
+    <result column="u_face" property="u_face" jdbcType="VARCHAR" />
+    <result column="u_random" property="u_random" jdbcType="VARCHAR" />
+    <result column="u_integral" property="u_integral" jdbcType="INTEGER" />
+    <result column="u_remainder" property="u_remainder" jdbcType="INTEGER" />
+    <result column="u_regtime" property="u_regtime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    u_id, u_openid, u_name, u_face, u_random, u_integral, u_remainder, u_regtime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.liu.yuedu.pojo.YueduMembersExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from yuedu_members
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from yuedu_members
+    where u_id = #{u_id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from yuedu_members
+    where u_id = #{u_id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.liu.yuedu.pojo.YueduMembersExample" >
+    delete from yuedu_members
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.liu.yuedu.pojo.YueduMembers" >
+    insert into yuedu_members (u_id, u_openid, u_name, 
+      u_face, u_random, u_integral, 
+      u_remainder, u_regtime)
+    values (#{u_id,jdbcType=INTEGER}, #{u_openid,jdbcType=VARCHAR}, #{u_name,jdbcType=VARCHAR}, 
+      #{u_face,jdbcType=VARCHAR}, #{u_random,jdbcType=VARCHAR}, #{u_integral,jdbcType=INTEGER}, 
+      #{u_remainder,jdbcType=INTEGER}, #{u_regtime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.liu.yuedu.pojo.YueduMembers" >
+    insert into yuedu_members
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="u_id != null" >
+        u_id,
+      </if>
+      <if test="u_openid != null" >
+        u_openid,
+      </if>
+      <if test="u_name != null" >
+        u_name,
+      </if>
+      <if test="u_face != null" >
+        u_face,
+      </if>
+      <if test="u_random != null" >
+        u_random,
+      </if>
+      <if test="u_integral != null" >
+        u_integral,
+      </if>
+      <if test="u_remainder != null" >
+        u_remainder,
+      </if>
+      <if test="u_regtime != null" >
+        u_regtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="u_id != null" >
+        #{u_id,jdbcType=INTEGER},
+      </if>
+      <if test="u_openid != null" >
+        #{u_openid,jdbcType=VARCHAR},
+      </if>
+      <if test="u_name != null" >
+        #{u_name,jdbcType=VARCHAR},
+      </if>
+      <if test="u_face != null" >
+        #{u_face,jdbcType=VARCHAR},
+      </if>
+      <if test="u_random != null" >
+        #{u_random,jdbcType=VARCHAR},
+      </if>
+      <if test="u_integral != null" >
+        #{u_integral,jdbcType=INTEGER},
+      </if>
+      <if test="u_remainder != null" >
+        #{u_remainder,jdbcType=INTEGER},
+      </if>
+      <if test="u_regtime != null" >
+        #{u_regtime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.liu.yuedu.pojo.YueduMembersExample" resultType="java.lang.Integer" >
+    select count(*) from yuedu_members
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update yuedu_members
+    <set >
+      <if test="record.u_id != null" >
+        u_id = #{record.u_id,jdbcType=INTEGER},
+      </if>
+      <if test="record.u_openid != null" >
+        u_openid = #{record.u_openid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.u_name != null" >
+        u_name = #{record.u_name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.u_face != null" >
+        u_face = #{record.u_face,jdbcType=VARCHAR},
+      </if>
+      <if test="record.u_random != null" >
+        u_random = #{record.u_random,jdbcType=VARCHAR},
+      </if>
+      <if test="record.u_integral != null" >
+        u_integral = #{record.u_integral,jdbcType=INTEGER},
+      </if>
+      <if test="record.u_remainder != null" >
+        u_remainder = #{record.u_remainder,jdbcType=INTEGER},
+      </if>
+      <if test="record.u_regtime != null" >
+        u_regtime = #{record.u_regtime,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update yuedu_members
+    set u_id = #{record.u_id,jdbcType=INTEGER},
+      u_openid = #{record.u_openid,jdbcType=VARCHAR},
+      u_name = #{record.u_name,jdbcType=VARCHAR},
+      u_face = #{record.u_face,jdbcType=VARCHAR},
+      u_random = #{record.u_random,jdbcType=VARCHAR},
+      u_integral = #{record.u_integral,jdbcType=INTEGER},
+      u_remainder = #{record.u_remainder,jdbcType=INTEGER},
+      u_regtime = #{record.u_regtime,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.liu.yuedu.pojo.YueduMembers" >
+    update yuedu_members
+    <set >
+      <if test="u_openid != null" >
+        u_openid = #{u_openid,jdbcType=VARCHAR},
+      </if>
+      <if test="u_name != null" >
+        u_name = #{u_name,jdbcType=VARCHAR},
+      </if>
+      <if test="u_face != null" >
+        u_face = #{u_face,jdbcType=VARCHAR},
+      </if>
+      <if test="u_random != null" >
+        u_random = #{u_random,jdbcType=VARCHAR},
+      </if>
+      <if test="u_integral != null" >
+        u_integral = #{u_integral,jdbcType=INTEGER},
+      </if>
+      <if test="u_remainder != null" >
+        u_remainder = #{u_remainder,jdbcType=INTEGER},
+      </if>
+      <if test="u_regtime != null" >
+        u_regtime = #{u_regtime,jdbcType=DATE},
+      </if>
+    </set>
+    where u_id = #{u_id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.liu.yuedu.pojo.YueduMembers" >
+    update yuedu_members
+    set u_openid = #{u_openid,jdbcType=VARCHAR},
+      u_name = #{u_name,jdbcType=VARCHAR},
+      u_face = #{u_face,jdbcType=VARCHAR},
+      u_random = #{u_random,jdbcType=VARCHAR},
+      u_integral = #{u_integral,jdbcType=INTEGER},
+      u_remainder = #{u_remainder,jdbcType=INTEGER},
+      u_regtime = #{u_regtime,jdbcType=DATE}
+    where u_id = #{u_id,jdbcType=INTEGER}
+  </update>
+</mapper>

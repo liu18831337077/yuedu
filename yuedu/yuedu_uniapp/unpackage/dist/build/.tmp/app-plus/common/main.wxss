@@ -1,0 +1,122 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*每个页面公共css */
+/* 来自 graceUI http://grace.hcoder.net/ */
+view{font-size:28rpx;}
+.grace-padding{padding:2%; width:96%;}
+.grace-common-bg{background:#F8F8F8;}
+.grace-noborder{border:0 !important;}
+.grace-left-padding-wrap{width:96%; padding:12rpx 0; padding-left:4%; overflow:hidden; background:#FFFFFF;}
+.grace-left-padding-wrap .grace-list{border-bottom:1rpx solid #D1D1D1; padding-left:0;}
+.grace-left-padding-wrap .grace-list view text{color:#666; font-size:28rpx;}
+/* 文字相关 */
+.grace-center{-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center; text-align:center;}
+.grace-h1{font-size:80rpx; line-height:1.8em;}
+.grace-h2{font-size:60rpx; line-height:1.8em;}
+.grace-h3{font-size:45rpx; line-height:1.8em;}
+.grace-h4{font-size:32rpx; line-height:1.8em;}
+.grace-h5{font-size:30rpx; line-height:1.8em;}
+.grace-text{font-size:28rpx; line-height:2.2em;}
+.grace-text image{width:100%; margin:20rpx 0;}
+.grace-text-small{font-size:24rpx; line-height:1.8em;}
+.grace-line-through{text-decoration:line-through;}
+.grace-italic{font-style:italic;}
+.grace-indent{text-indent:2em;}
+.grace-blod{font-weight:700;}
+.grace-ellipsis{width:100%; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+/* 栅格布局 */
+.grace-flex{display:-webkit-box !important;display:-webkit-flex !important;display:flex !important;}
+.grace-rows{display:-webkit-box;display:-webkit-flex;display:flex; -webkit-box-orient:horizontal !important; -webkit-box-direction:normal !important; -webkit-flex-direction:row !important; flex-direction:row !important;}
+.grace-columns{display:-webkit-box;display:-webkit-flex;display:flex; -webkit-box-orient:vertical !important; -webkit-box-direction:normal !important; -webkit-flex-direction:column !important; flex-direction:column !important;}
+.grace-wrap{display:-webkit-box;display:-webkit-flex;display:flex; -webkit-flex-wrap:wrap; flex-wrap:wrap;}
+.grace-nowrap{display:-webkit-box;display:-webkit-flex;display:flex; -webkit-flex-wrap:nowrap !important; flex-wrap:nowrap !important;}
+.grace-space-between{display:-webkit-box;display:-webkit-flex;display:flex; -webkit-box-pack:justify !important; -webkit-justify-content:space-between !important; justify-content:space-between !important;}
+/* 背景颜色 */
+.grace-bg-red{background:#F76260;}
+.grace-bg-green{background:#09BB07;}
+.grace-bg-blue{background:#10AEFF;}
+/* 横向广告组 */
+.grace-box-banner{padding:20rpx 0; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap; overflow:hidden; background:#FFF;}
+.grace-box-banner .garce-items{width:25%; border-right:1px solid #F1F2F3; -webkit-box-pack:center; -webkit-justify-content:center; justify-content:center; line-height:1.4em; text-align:center；}
+.grace-box-banner .garce-items:last-child{border:none;}
+.grace-box-banner .garce-items view{-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center; text-align:center;}
+.grace-box-banner .garce-items text text{font-size:22rupx; color:#666;}
+.grace-box-banner .line1{font-size:36rpx; line-height:60rpx; overflow:hidden;}
+.grace-box-banner .line1 text{font-size:26rpx; color:#666; line-height:65rpx; margin-left:5rpx;}
+.grace-box-banner .line2{font-size:26rpx; color:#666; line-height:32rpx;}
+/* 标题及更多 */
+.grace-title{padding:10rpx 0; line-height:1.8em;}
+.grace-title .grace-text-small{color:#888;}
+.grace-more-bottom{font-size:24rpx; text-align:center; -webkit-box-pack:center; -webkit-justify-content:center; justify-content:center; padding:15rpx 0; line-height:40rpx;}
+.grace-more-bottom text{font-size:24rpx;}
+.grace-more-r{display:block; width:auto; -webkit-flex-shrink:0; flex-shrink:0; font-size:22rpx;}
+.grace-more-r text{font-size:22rpx;}
+/* 提交文章页面 */
+.write_title{padding:10px; border-bottom:1px dashed #F1F2F3;}
+.write_title input{width:100%; font-size:20px; line-height:26px; text-align:center;}
+.inputArea{padding:10px; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap;}
+.inputArea .addImg{width:90px; height:90px; text-align:center; line-height:90px; -webkit-flex-shrink:0; flex-shrink:0; font-size:16px; margin-right:8px; background:#F4F5F6;}
+.inputArea .addText{width:100%; height:90px; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap;  background:#F4F5F6;}
+.inputArea .addText textarea{width:100%; height:80px; padding:5px; font-size:14px;}
+.inputArea .addText button{width:60px; height:90px; font-size:12px; text-align:center; line-height:90px; margin-left:8px; -webkit-flex-shrink:0; flex-shrink:0;}
+.artList{padding:10px;}
+.artList .item{width:100%; margin:10px 0; overflow:hidden;}
+.artList image{width:100% !important; height:auto;}
+.artList .item textarea{width:80%; margin:0 auto; height:40px; line-height:40px; text-align:center; padding:5px; font-size:14px; line-height:1.5em; color:#CCC; border-bottom:1px solid #D1D1D1;}
+.submitNow{line-height:50px; color:#00B26A; font-size:18px; margin:0px 10px; text-align:center; border-top:1px solid #F1F2F3; border-bottom:1px solid #F1F2F3;}
+.deleteText{text-align:center; line-height:20px; font-size:14px; color: #00B26A; margin-top:8px;}
+.art-cate{padding:10px; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap; -webkit-box-pack:justify; -webkit-justify-content:space-between; justify-content:space-between;}
+/* 首页分段器 */
+.grace-header-cate{width:100%; height:42px; background:#FFF; border-bottom:2px solid #F0F0F0; position:fixed; z-index:1; left:0; top:0;}
+.grace-tab-title{white-space:nowrap; text-align:center;}
+.grace-tab-title view{width:auto; padding:0 12px; margin:0 8px; line-height:42px; display:inline-block; text-align:center; font-size:30rpx;}
+.grace-tab-title view:first-child{margin-left: 0;}
+.grace-tab-title view:last-child{margin-right: 0;}
+.grace-tab-current{border-bottom:2px solid #DE533A !important; color:#DE533A;}
+/* 新闻列表 */
+.grace-news-list{padding:12px;}
+.grace-news-list > navigator{display:block; width:100%; padding:12rpx 0; margin:12rpx 0;}
+.grace-news-list-items{width:100%; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap; position:relative;}
+.grace-news-list-img{width:200rpx; -webkit-flex-shrink:0; flex-shrink:0;}
+.grace-news-list-title{width:100%; overflow:hidden;}
+.grace-news-list-title-main{line-height:1.5em; font-size:32rpx; width:100%;}
+.grace-news-list-title-desc{font-size:24rpx; display:block; color:#666; margin-top:12rpx; height:40rpx; line-height:40rpx;}
+.grace-news-tips{width:auto; padding:0 12rpx; border-radius:5rpx; overflow:hidden; background:#FF4343; position:absolute; top:0; color:#FFFFFF; height:36rpx; line-height:36rpx; font-size:20rpx;}
+.grace-news-tips-l{left:0;}
+.grace-news-tips-r{right:0;}
+.grace-news-list-info{width:100%; margin-top:10rpx; line-height:36rpx; font-size:24rpx; color:#666; -webkit-box-pack:justify; -webkit-justify-content:space-between; justify-content:space-between;}
+.grace-news-list-info view{font-size:24rpx; color:#666;}
+.grace-news-list-info text{font-size:24rpx; color:#666; margin-right:10rpx;}
+.grace-news-list-img-news{width:100%; -webkit-flex-wrap:wrap; flex-wrap:wrap;}
+.grace-news-list-imgs{-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between; width:100%; padding:18rpx 0; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap;}
+.grace-news-list-imgs .imgs{width:31.3%; height:70px; overflow:hidden; margin:0 1%;}
+.grace-news-list-imgs .imgs image{width:100%;}
+.grace-news-list-img-big{width:100%; max-height:188px; overflow:hidden; padding:18rpx 0;}
+.grace-news-list-img-big image{width:100%;}
+.grace-skeleton{padding:5px 0; background:#F1F2F3; border-radius:8px;}
+.grace-article-title{margin:8px 12px; font-size:26px; line-height:1.5em; font-weight:700;}
+.grace-article-author-line{margin:3px 12px; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap; -webkit-box-pack:justify; -webkit-justify-content:space-between; justify-content:space-between;}
+.grace-article-author{display:-webkit-box;display:-webkit-flex;display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap;}
+.grace-article-author image{width:28px; height:28px; border-radius:100%;}
+.grace-article-author .author-name{line-height:28px; padding-left:5px;}
+.grace-article-author-line .btn{display:inline-block; height:28px; line-height:28px; border-radius:3px; padding:0 10px; background:#00B26A; color:#FFFFFF;}
+.grace-article-info-line{margin:8px 12px; display:-webkit-box; display:-webkit-flex; display:flex; -webkit-flex-wrap:nowrap; flex-wrap:nowrap; -webkit-box-pack:justify; -webkit-justify-content:space-between; justify-content:space-between;}
+.grace-article-info-line view{color:#888; line-height:20px; font-size:12px;}
+.grace-article-contents{margin:10px 0;}
+.grace-article-contents .img-item{width:100%;}
+.grace-article-contents .img-item image{width:100%;}
+.grace-article-contents .text-item{margin:8px 12px; line-height:2.2em; font-size:16px; color:#2F2F2F;}
+

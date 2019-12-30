@@ -1,0 +1,24 @@
+server:
+  port: 8800
+spring:
+  servlet:
+    multipart:
+      #单个数据的大小
+      max-file-size: 100MB
+      #总数据的大小
+      max-request-size: 100MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://49.232.43.230:3306/yuedu?characterEncoding=utf-8
+    driver‐class‐name: com.mysql.jdbc.Driver
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    com.liu.yuedu.mapper : debug
+
